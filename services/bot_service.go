@@ -14,7 +14,7 @@ func NewBotService() *BotService {
 
 func (s *BotService) GetBotInfo() (*models.BotInfoDTO, error) {
 	return &models.BotInfoDTO{
-		Name:    "Template Go Bot",
+		Name:    "Go Template Bot",
 		Version: "1.0.0",
 	}, nil
 }
