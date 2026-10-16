@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"os"
 	"template-go/controllers"
 	"template-go/services"
 
@@ -15,8 +17,15 @@ func main() {
 	botService := services.NewBotService()
 	botController := controllers.NewBotController(botService)
 
-	r.GET("/info", botController.GetBotInfo)
-	r.POST("/play", botController.Play)
+	r.GET("/api/v1/bots/info", botController.GetBotInfo)
+	r.POST("/api/v1/bots/play", botController.Play)
 
-	r.Run(":6000")
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "9000"
+	}
+
+	log.Default().Printf("Server is running on port %s", port)
+
+	r.Run(":" + port)
 }
