@@ -10,6 +10,7 @@ const (
 )
 
 type BotDataDTO struct {
+	NextTrapTurn     *int     `json:"nextTrapTurn,omitempty"`
 	Life             int32    `json:"life"`
 	ForbiddenActions int32    `json:"forbiddenActions"`
 	State            BotState `json:"state"`

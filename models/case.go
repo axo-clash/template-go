@@ -12,6 +12,7 @@ const (
 )
 
 type CaseDTO struct {
+	Trap        *TrapDTO    `json:"trap,omitempty"`
 	Coordinates *CoordDTO   `json:"coordinates"`
 	Content     CaseContent `json:"content"`
 	Items       []ItemDTO   `json:"items"`

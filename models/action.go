@@ -11,10 +11,12 @@ const (
 	ActionShootRight ActionType = "SHOOT_RIGHT"
 	ActionShootUp    ActionType = "SHOOT_UP"
 	ActionShootDown  ActionType = "SHOOT_DOWN"
+	ActionPlaceTrap  ActionType = "PLACE_TRAP"
 	ActionUnknown    ActionType = "UNKNOWN"
 )
 
 type ActionDTO struct {
+	Coordinates     *CoordDTO  `json:"coordinates,omitempty"`
 	ID              int64      `json:"id"`
 	BotID           int64      `json:"botId"`
 	Action          ActionType `json:"action"`

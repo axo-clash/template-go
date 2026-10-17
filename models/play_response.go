@@ -1,5 +1,6 @@
 package models
 
 type PlayResponseDTO struct {
-	Action ActionType `json:"action"`
+	Coordinates *CoordDTO  `json:"coordinates,omitempty"`
+	Action      ActionType `json:"action"`
 }
